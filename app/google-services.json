@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1011343170602",
+    "project_id": "mitienda2021-fc4e6",
+    "storage_bucket": "mitienda2021-fc4e6.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1011343170602:android:2c7a295f47d00c6cddb753",
+        "android_client_info": {
+          "package_name": "com.example.myapplication"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1011343170602-7n5ie2f53ntsvt2i6vqqvr4jo8uge37n.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBzKoRm3FN3MwEb25S5u9ZVmfZaAIyQZC0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1011343170602-7n5ie2f53ntsvt2i6vqqvr4jo8uge37n.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

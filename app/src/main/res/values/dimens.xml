@@ -1,0 +1,9 @@
+<resources>
+    <dimen name="fab_margin">16dp</dimen>
+    <dimen name="icon_size">60dp</dimen>
+    <dimen name="SubTitle">18dp</dimen>
+    <dimen name="title_size">30dp</dimen>
+    <dimen name="Image_size">200dp</dimen>
+    <dimen name="titulo">30dp</dimen>
+    <dimen name="inputs">50dp</dimen>
+</resources>

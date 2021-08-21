@@ -1,0 +1,39 @@
+<resources>
+    <string name="app_name">My Application</string>
+    <string name="action_settings">Settings</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="texto_boton">0</string>
+    <string name="texto_boton2">Boton Ejemplo</string>
+    <string name="boton3">Boton 4</string>
+    <string name="next2">Next2</string>
+    <string name="next3">Next3</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="To">To</string>
+    <string name="subject">subject</string>
+    <string name="Mensaje">Mensaje</string>
+    <string name="enviar">Enviar</string>
+    <string name="Home_vector">Home</string>
+    <string name="comentario_vector">Comentarios</string>
+    <string name="Producto">Productos</string>
+    <string name="Profile">Perfil</string>
+    <string name="DetalleProduct">Detalle Producto</string>
+    <string name="UserName">Username</string>
+    <string name="Password">Password</string>
+    <string name="Sign_in">Sign in</string>
+    <string name="Nombres">Nombre(s)</string>
+    <string name="Apellidos">Apellido(s)</string>
+    <string name="Email">Email</string>
+    <string name="Telefono">Celular</string>
+    <string name="Guardar">Guardar</string>
+    <string name="Crear_Pass">Digite Una Contraseña</string>
+    <string name="olvidaste_tu_contrase_a">Olvidaste tu contraseña ?</string>
+    <string name="esgistras_crea_tu_perfil">Aun no te resgistras..Crea tu Perfil..</string>
+</resources>
