@@ -47,10 +47,10 @@ class SplashScreenActivity : AppCompatActivity() {
             ),
             Storeinfo(
                 1,
-                "Mi tienda",
+                "El nombre de la tienda",
                 "https://www.gadae.com/blog/wp-content/uploads/mi-tienda.jpg",
                 "Calle falsa 123 Bogota",
-                "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
+                "300415234"
             )
         )
         /*splash.imageAssetsFolder= "imagenes"*/
@@ -65,7 +65,7 @@ class SplashScreenActivity : AppCompatActivity() {
             override fun onAnimationEnd(animation: Animator?) {
 
                 splashViewModel.user.observe(this@SplashScreenActivity,{user ->
-                    if (user == null){
+                    if (user != null){
                         val intent = Intent(this@SplashScreenActivity, LoginActivity::class.java)
                         startActivity(intent)
                     }else{

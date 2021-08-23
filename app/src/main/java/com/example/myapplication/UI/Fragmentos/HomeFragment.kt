@@ -40,8 +40,9 @@ class HomeFragment : Fragment() {
         homeViewModel.loadStoreInfo()
         homeViewModel.info.observe(viewLifecycleOwner, Observer { info ->
             binding.tituloHome.text= info.name
-            binding.homeDireccion.text=info.adress
-            binding.homeDescripcion.text=info.description
+            binding.homeName.text=info.name
+            binding.homePhone.text=info.description
+            binding.homeAddress.text=info.adress
             Glide.with(binding.root).load(info.image).into(binding.homeImage)
         })
     }

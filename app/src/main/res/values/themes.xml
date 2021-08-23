@@ -24,6 +24,6 @@
     <style name="Theme.MyApplication.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
     <style name="roundeImage">
-        <item name="cornerSize">10%</item>
+        <item name="cornerSize">55%</item>
     </style>
 </resources>
