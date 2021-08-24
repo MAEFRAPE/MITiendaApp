@@ -23,8 +23,10 @@ class ProductAdapter(var items:List<Producto>):RecyclerView.Adapter<ProductAdapt
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val item= items[position]
         val view=holder.view
-        view.itemProductNombre.text=item.name
+        view.itemProductName.text=item.name
         view.itemProductPrice.text=item.price
+        view.itemProductFormat.text=item.format
+        view.itemProductBrand.text=item.brand
       //  view.itemPhotoComment.setImageResource(R.mipmap.ic_launcher)
        Glide.with(holder.itemView).load(item.image).into(view.itemImageProduct);
         view.root.setOnClickListener{
