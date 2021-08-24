@@ -9,10 +9,12 @@ import android.view.ViewGroup
 import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
+import com.bumptech.glide.Glide
 import com.example.myapplication.UI.Listener.OnProductListener
 import com.example.myapplication.UI.Adaptadores.ProductAdapter
 import com.example.myapplication.Data.Models.Producto
 import com.example.myapplication.R
+import com.example.myapplication.UI.viewmodels.HomeViewModels
 import com.example.myapplication.UI.viewmodels.ProductViewModel
 import com.example.myapplication.databinding.FragmentProductBinding
 import org.koin.androidx.viewmodel.ext.android.sharedViewModel
@@ -34,6 +36,7 @@ class ProductFragment : Fragment() {
     private val binding get() = _binding!!
 
     private val productviemodel:ProductViewModel by sharedViewModel()
+    private val homeViewModel: HomeViewModels by sharedViewModel()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -66,6 +69,10 @@ class ProductFragment : Fragment() {
         productviemodel.product.observe(viewLifecycleOwner, Observer { product->
             productAdapter.newDataset(product)
 
+        })
+        homeViewModel.loadStoreInfo()
+        homeViewModel.info.observe(viewLifecycleOwner, Observer { info ->
+            Glide.with(binding.root).load(info.image).into(binding.mitiendaProductImage)
         })
     }
 

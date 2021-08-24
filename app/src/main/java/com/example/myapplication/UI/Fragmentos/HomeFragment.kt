@@ -9,6 +9,7 @@ import androidx.lifecycle.Observer
 import com.bumptech.glide.Glide
 import com.example.myapplication.UI.viewmodels.HomeViewModels
 import com.example.myapplication.databinding.FragmentHomeBinding
+import org.koin.androidx.viewmodel.ext.android.sharedViewModel
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 
@@ -23,7 +24,7 @@ class HomeFragment : Fragment() {
 
     private val binding get() = _binding!!
 
-    private val homeViewModel: HomeViewModels by viewModel()
+    private val homeViewModel: HomeViewModels by sharedViewModel()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
