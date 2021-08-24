@@ -20,10 +20,10 @@
     <string name="subject">subject</string>
     <string name="Mensaje">Mensaje</string>
     <string name="enviar">Enviar</string>
-    <string name="Home_vector">Home</string>
-    <string name="comentario_vector">Comentarios</string>
-    <string name="Producto">Productos</string>
-    <string name="Profile">Perfil</string>
+    <string name="Home_vector">INFORMACIÓN TIENDA</string>
+    <string name="comentario_vector">COMENTARIOS</string>
+    <string name="Producto">PRODUCTOS</string>
+    <string name="Profile">PERFIL</string>
     <string name="DetalleProduct">Detalle Producto</string>
     <string name="UserName">Email</string>
     <string name="Password">Password</string>
