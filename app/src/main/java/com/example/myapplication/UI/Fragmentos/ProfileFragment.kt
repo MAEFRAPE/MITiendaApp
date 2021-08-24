@@ -14,9 +14,15 @@ import android.view.ViewGroup
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import android.Manifest
+import androidx.lifecycle.Observer
+import com.bumptech.glide.Glide
+import com.example.myapplication.Data.Models.User
+import com.example.myapplication.UI.Activities.LoginActivity
+import com.example.myapplication.UI.Activities.MainActivity
+import com.example.myapplication.UI.viewmodels.LoginViewModel
 
 import com.example.myapplication.databinding.FragmentProfileBinding
-
+import org.koin.androidx.viewmodel.ext.android.viewModel
 
 
 /**
@@ -27,7 +33,7 @@ import com.example.myapplication.databinding.FragmentProfileBinding
 class ProfileFragment : Fragment() {
 
     private var _binding: FragmentProfileBinding? = null
-
+    private val loginViewmodels: LoginViewModel by viewModel()
     private val binding get() = _binding!!
     private val Solicitar_Permiso_camara = 1
     private val Solicitar_imagen= 2
@@ -44,6 +50,7 @@ class ProfileFragment : Fragment() {
 
     override fun onStart() {
         super.onStart()
+        loginViewmodels.loginIn()
         verificarPermiso()
         binding.profileImage.setOnClickListener {
             Log.d("Click","aqui se dio click")
@@ -60,6 +67,30 @@ class ProfileFragment : Fragment() {
                 }
             }
         }
+        binding.profileLogOut.setOnClickListener{
+
+            loginViewmodels.logout()
+        }
+        loginViewmodels.user.observe(viewLifecycleOwner, Observer { user ->
+
+            if(user== null){
+                val intent= Intent(requireContext(),LoginActivity::class.java)
+                startActivity(intent)
+                requireActivity().finish()
+            }else{
+
+                binding.profileName.text= user.displayName
+                if(user.photoUrl != null){
+                    Glide.with(binding.root).load(user.photoUrl).into(binding.profileImage)
+
+                }
+                loginViewmodels.loadUser(user.uid)
+                loginViewmodels.userDB.observe(viewLifecycleOwner, Observer { userDB ->
+                    binding.profileTel.text= userDB.telefono
+                })
+            }
+        })
+
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
@@ -68,7 +99,8 @@ class ProfileFragment : Fragment() {
             if (requestCode == Solicitar_imagen){
                 Log.d("Click","SE va colocar la imagen")
                 val bitmap= data?.extras?.get("data") as Bitmap
-                binding.profileImage.setImageBitmap(bitmap)
+                /*binding.profileImage.setImageBitmap(bitmap)*/
+                loginViewmodels.uploadImage(bitmap)
             }
         }
 

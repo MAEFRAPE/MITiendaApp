@@ -17,6 +17,6 @@ val repoModule = module {
         ProductRepository(get (),get())
     }
     single {
-        UserRepository(get ())
+        UserRepository(get (),get(),get())
     }
 }

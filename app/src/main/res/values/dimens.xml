@@ -5,5 +5,5 @@
     <dimen name="title_size">30dp</dimen>
     <dimen name="Image_size">200dp</dimen>
     <dimen name="titulo">30dp</dimen>
-    <dimen name="inputs">50dp</dimen>
+    <dimen name="inputs">80dp</dimen>
 </resources>

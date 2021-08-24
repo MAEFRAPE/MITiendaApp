@@ -4,6 +4,7 @@ import com.example.myapplication.Data.Mocks.ProductMockus
 import com.example.myapplication.Data.Mocks.StoreInfoMocks
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.storage.FirebaseStorage
 import org.koin.dsl.module
 val dataSourceModule = module {
     single {
@@ -20,5 +21,8 @@ val dataSourceModule = module {
     }
     single {
         FirebaseAuth.getInstance()
+    }
+    single {
+        FirebaseStorage.getInstance().getReference()
     }
 }
