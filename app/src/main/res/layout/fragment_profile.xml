@@ -8,7 +8,7 @@
 
     <!-- TODO: Update blank fragment layout -->
 
-    <com.google.android.material.imageview.ShapeableImageView
+    <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/profile_image"
         android:layout_width="@dimen/Image_size"
         android:layout_height="@dimen/Image_size"
@@ -21,6 +21,8 @@
         app:layout_constraintVertical_chainStyle="packed"
         android:scaleType="centerCrop"
         app:shapeAppearanceOverlay="@style/roundeImage"
+        app:civ_border_width="2dp"
+        app:civ_border_color="@color/purple_700"
         />
     <TextView
         android:id="@+id/profile_name"
@@ -31,10 +33,10 @@
         android:layout_marginTop="@dimen/fab_margin"
         android:textSize="@dimen/SubTitle"
         android:text="Manuel Franco"
-        app:layout_constraintBottom_toTopOf="@+id/profile_tel"
+        app:layout_constraintBottom_toTopOf="@+id/profile_email"
         />
     <TextView
-        android:id="@+id/profile_tel"
+        android:id="@+id/profile_email"
         android:layout_height="wrap_content"
         android:layout_width="wrap_content"
         app:layout_constraintLeft_toLeftOf="@id/profile_image"
@@ -42,6 +44,17 @@
         android:layout_marginTop="@dimen/fab_margin"
         android:textSize="@dimen/SubTitle"
         android:text="2244555"
+        app:layout_constraintBottom_toTopOf="@+id/profile_tel"
+        />
+    <TextView
+        android:id="@+id/profile_tel"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        app:layout_constraintLeft_toLeftOf="@id/profile_image"
+        app:layout_constraintTop_toBottomOf="@id/profile_email"
+        android:layout_marginTop="@dimen/fab_margin"
+        android:textSize="@dimen/SubTitle"
+        android:text="gdgdgd@hotmail.com"
         app:layout_constraintBottom_toTopOf="@+id/profile_log_out"
         />
     <Button

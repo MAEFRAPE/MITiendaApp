@@ -11,7 +11,7 @@ val repoModule = module {
         HomeRepository(get(),get())
     }
     single {
-        CommentRepository(get (),get())
+        CommentRepository(get())
     }
     single {
         ProductRepository(get (),get())

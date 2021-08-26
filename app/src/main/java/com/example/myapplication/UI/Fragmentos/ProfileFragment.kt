@@ -87,6 +87,9 @@ class ProfileFragment : Fragment() {
                 loginViewmodels.loadUser(user.uid)
                 loginViewmodels.userDB.observe(viewLifecycleOwner, Observer { userDB ->
                     binding.profileTel.text= userDB.telefono
+                    binding.profileEmail.text=userDB.email
+                    Glide.with(binding.root).load(userDB.imag).into(binding.profileImage)
+
                 })
             }
         })

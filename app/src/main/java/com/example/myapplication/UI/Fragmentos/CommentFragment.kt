@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.lifecycle.Observer
 
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -13,7 +14,10 @@ import com.example.myapplication.UI.Adaptadores.Adaptador
 import com.example.myapplication.Data.Models.Comment
 import com.example.myapplication.UI.Listener.OnCommentListener
 import com.example.myapplication.UI.viewmodels.CommentViewmodel
+import com.example.myapplication.UI.viewmodels.LoginViewModel
 import com.example.myapplication.databinding.FragmentCommentBinding
+import com.google.firebase.auth.FirebaseUser
+import com.google.firebase.auth.ktx.userProfileChangeRequest
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 
@@ -28,10 +32,12 @@ class CommentFragment : Fragment() {
     private var _binding: FragmentCommentBinding? = null
     private lateinit var    commentAdapter: Adaptador
     private  lateinit var layaoutManager: LinearLayoutManager
+    private lateinit var  userDB:FirebaseUser
 
     private val binding get() = _binding!!
 
     private val commentVieModel:CommentViewmodel by viewModel()
+    private val loginVieModel:LoginViewModel by viewModel()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -44,6 +50,19 @@ class CommentFragment : Fragment() {
 
     override fun onStart() {
         super.onStart()
+
+        binding.containedButton.setOnClickListener {
+            Log.d("Click","Escucha")
+            if (!binding.textComment.text.toString().equals("")){
+                Log.d("Click","Empezo")
+                loginVieModel.loginIn()
+                loginVieModel.user.observe(viewLifecycleOwner, Observer { user ->
+
+                    commentVieModel.registroComment(user!!,binding.textComment.text.toString())
+                   binding.textComment.text.clear()
+                })
+           }
+        }
         commentAdapter= Adaptador(
             listOf()
             )
@@ -65,6 +84,9 @@ class CommentFragment : Fragment() {
         })
 
         commentVieModel.loadCommentInfo()
+
+
+
     }
 
 

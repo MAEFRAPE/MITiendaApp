@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.Observer
 import com.bumptech.glide.Glide
+import com.example.myapplication.Data.Models.Storeinfo
 import com.example.myapplication.UI.viewmodels.HomeViewModels
 import com.example.myapplication.databinding.FragmentHomeBinding
 import org.koin.androidx.viewmodel.ext.android.sharedViewModel
@@ -24,7 +25,9 @@ class HomeFragment : Fragment() {
 
     private val binding get() = _binding!!
 
-    private val homeViewModel: HomeViewModels by sharedViewModel()
+    private val homeViewModel: HomeViewModels by viewModel()
+
+    private lateinit var store :Storeinfo
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -40,13 +43,22 @@ class HomeFragment : Fragment() {
         super.onStart()
         homeViewModel.loadStoreInfo()
         homeViewModel.info.observe(viewLifecycleOwner, Observer { info ->
+            store = info
             binding.tituloHome.text= info.name
             binding.homeName.text=info.name
             binding.homePhone.text=info.description
             binding.homeAddress.text=info.adress
             Glide.with(binding.root).load(info.image).into(binding.homeImage)
         })
+
     }
+
+
+
+
+
+
+
 
 
 }

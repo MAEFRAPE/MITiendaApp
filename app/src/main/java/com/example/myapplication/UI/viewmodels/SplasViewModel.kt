@@ -15,16 +15,16 @@ import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.ktx.Firebase
 import kotlinx.coroutines.launch
 
-class SplasViewModel(private val repo:CommentRepository,private val repoProduct: ProductRepository,
+class SplasViewModel(/*private val repo:CommentRepository,*/private val repoProduct: ProductRepository,
                      private val repoStore:HomeRepository,private val repoUser:UserRepository):ViewModel() {
 
     private var _user:MutableLiveData<FirebaseUser?> = MutableLiveData()
     val user: LiveData<FirebaseUser?> get() = _user
 
-    fun insert(comments:List<Comment>,productos:List<Producto>, store:Storeinfo)  {
+    fun insert(/*comments:List<Comment>,*/productos:List<Producto>, store:Storeinfo)  {
 
          viewModelScope.launch {
-             repo.insertComment(comments)
+            // repo.insertComment(comments)
              repoProduct.insertProduct(productos)
              repoStore.insertStore(store)
          }

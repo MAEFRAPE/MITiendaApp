@@ -27,9 +27,43 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@id/Comment_titulo"
-        app:layout_constraintBottom_toBottomOf="parent"
-
+        app:layout_constraintBottom_toTopOf="@+id/text_comment"
         tools:listitem="@layout/item_comment"
+        />
+
+    <EditText
+        android:id="@+id/text_comment"
+        android:layout_width="0dp"
+        app:layout_constraintHorizontal_weight="3"
+        android:layout_marginLeft="@dimen/fab_margin"
+
+        android:layout_height="wrap_content"
+        android:inputType="textMultiLine"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Recycler"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/containedButton"
+        android:lines="8"
+        android:maxLines="10"
+        android:minLines="1"
+        android:scrollbars="vertical"
+        app:layout_constraintHorizontal_chainStyle="packed"
+
+        />
+    <Button
+        app:layout_constraintTop_toBottomOf="@+id/Recycler"
+        app:layout_constraintBottom_toBottomOf="@id/text_comment"
+        app:layout_constraintLeft_toRightOf="@+id/text_comment"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginRight="@dimen/fab_margin"
+        android:id="@+id/containedButton"
+        android:layout_width="0dp"
+        app:layout_constraintHorizontal_weight="1"
+        android:layout_height="wrap_content"
+        app:iconSize="30dp"
+        app:iconGravity="textStart"
+        app:icon="@drawable/ic_baseline_send_24"
+        style="@style/Widget.MaterialComponents.Button.UnelevatedButton"
         />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -18,6 +18,7 @@ import com.example.myapplication.UI.viewmodels.HomeViewModels
 import com.example.myapplication.UI.viewmodels.ProductViewModel
 import com.example.myapplication.databinding.FragmentProductBinding
 import org.koin.androidx.viewmodel.ext.android.sharedViewModel
+import org.koin.androidx.viewmodel.ext.android.viewModel
 
 
 /**
@@ -36,7 +37,7 @@ class ProductFragment : Fragment() {
     private val binding get() = _binding!!
 
     private val productviemodel:ProductViewModel by sharedViewModel()
-    private val homeViewModel: HomeViewModels by sharedViewModel()
+    private val storeInfoVieModel: HomeViewModels by viewModel()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -70,10 +71,12 @@ class ProductFragment : Fragment() {
             productAdapter.newDataset(product)
 
         })
-        homeViewModel.loadStoreInfo()
-        homeViewModel.info.observe(viewLifecycleOwner, Observer { info ->
+        storeInfoVieModel.loadStoreInfo()
+        storeInfoVieModel.info.observe(viewLifecycleOwner, Observer { info ->
             Glide.with(binding.root).load(info.image).into(binding.mitiendaProductImage)
+
         })
+
     }
 
 
