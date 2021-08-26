@@ -12,6 +12,7 @@ import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.myapplication.UI.Adaptadores.Adaptador
 import com.example.myapplication.Data.Models.Comment
+import com.example.myapplication.R
 import com.example.myapplication.UI.Listener.OnCommentListener
 import com.example.myapplication.UI.viewmodels.CommentViewmodel
 import com.example.myapplication.UI.viewmodels.LoginViewModel
@@ -80,12 +81,17 @@ class CommentFragment : Fragment() {
 
 
         commentVieModel.comment.observe(viewLifecycleOwner, Observer { comments ->
+            binding.commentRefresh.isRefreshing= false
             commentAdapter.newDataset(comments)
         })
 
         commentVieModel.loadCommentInfo()
 
 
+        binding.commentRefresh.setOnRefreshListener {
+            commentVieModel.loadCommentInfo()
+        }
+        binding.commentRefresh.setColorSchemeColors(requireContext().getColor(R.color.Amarillo_200),requireContext().getColor(R.color.Amarillo_500))
 
     }
 

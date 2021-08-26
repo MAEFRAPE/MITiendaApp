@@ -8,7 +8,9 @@ import com.google.firebase.auth.FirebaseAuthUserCollisionException
 import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.auth.ktx.userProfileChangeRequest
 import com.google.firebase.firestore.CollectionReference
+import com.google.firebase.firestore.FieldPath
 import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.firestore.Query
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.tasks.await
 import kotlinx.coroutines.withContext
@@ -24,8 +26,8 @@ class CommentRepository(/*private val dataSource: CommentDao*/ private val dataS
         /*return withContext(Dispatchers.IO){
             dataSource.getAllComments()
         }*/
+        /*= db.get().await()*/
         val snapshot = db.get().await()
-
         return snapshot.toObjects(Comment::class.java)
     }
     /*suspend fun insertComment(comments:List<Comment>){

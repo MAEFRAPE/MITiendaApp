@@ -3,8 +3,10 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Manuel Franco/Curso Mintic/Ciclo IV/Proyecto/MiTiendaApp/app/src/main/res/layout/fragment_comment.xml" value="0.264" />
         <entry key="..\:/Manuel Franco/Curso Mintic/Ciclo IV/Proyecto/MiTiendaApp/app/src/main/res/layout/fragment_home.xml" value="0.13020833333333334" />
         <entry key="..\:/Manuel Franco/Curso Mintic/Ciclo IV/Proyecto/MiTiendaApp/app/src/main/res/layout/fragment_login.xml" value="0.14945652173913043" />
+        <entry key="..\:/Manuel Franco/Curso Mintic/Ciclo IV/Proyecto/MiTiendaApp/app/src/main/res/layout/fragment_product.xml" value="0.14492753623188406" />
         <entry key="..\:/Manuel Franco/Curso Mintic/Ciclo IV/Proyecto/MiTiendaApp/app/src/main/res/layout/fragment_profile.xml" value="0.14945652173913043" />
         <entry key="..\:/Manuel Franco/Curso Mintic/Ciclo IV/Proyecto/MiTiendaApp/app/src/main/res/layout/fragment_registro.xml" value="0.14945652173913043" />
         <entry key="..\:/Manuel Franco/Curso Mintic/Ciclo IV/Proyecto/MiTiendaApp/app/src/main/res/layout/item_comment.xml" value="0.13020833333333334" />

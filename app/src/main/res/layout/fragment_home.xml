@@ -35,7 +35,7 @@
         android:layout_marginTop="@dimen/fab_margin"
         android:src="@mipmap/ic_launcher"
         app:civ_border_width="4dp"
-        app:civ_border_color="@color/purple_700"/>
+        app:civ_border_color="@color/Amarillo_700"/>
 
 
    <!-- <TextView
@@ -87,7 +87,7 @@
         android:text="Nombre"
         android:textStyle="bold"
         android:textSize="16sp"
-        android:textColor="@color/purple_500"
+        android:textColor="@color/Amarillo_500"
         />
 
 
@@ -110,7 +110,7 @@
         android:text="Teléfono"
         android:textStyle="bold"
         android:textSize="16sp"
-        android:textColor="@color/purple_500" />
+        android:textColor="@color/Amarillo_500" />
 
 
     <TextView
@@ -132,7 +132,7 @@
         android:text="Dirección"
         android:textStyle="bold"
         android:textSize="16sp"
-        android:textColor="@color/purple_500"
+        android:textColor="@color/Amarillo_500"
         />
 
 

@@ -73,6 +73,8 @@ dependencies {
 
     //Base de datos local...room
 
+    // refress
+    implementation "androidx.swiperefreshlayout:swiperefreshlayout:1.0.0"
 
     implementation "androidx.room:room-runtime:$room_version"
     implementation "androidx.room:room-ktx:$room_version"

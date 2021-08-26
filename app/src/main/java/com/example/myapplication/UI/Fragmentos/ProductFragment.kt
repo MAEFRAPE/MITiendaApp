@@ -68,14 +68,24 @@ class ProductFragment : Fragment() {
 
         productviemodel.loadProduct()
         productviemodel.product.observe(viewLifecycleOwner, Observer { product->
+            binding.ProductRefresh.isRefreshing= false
             productAdapter.newDataset(product)
 
         })
         storeInfoVieModel.loadStoreInfo()
         storeInfoVieModel.info.observe(viewLifecycleOwner, Observer { info ->
+            binding.ProductRefresh.isRefreshing= false
             Glide.with(binding.root).load(info.image).into(binding.mitiendaProductImage)
 
         })
+
+
+        binding.ProductRefresh.setOnRefreshListener {
+            productviemodel.loadProduct()
+            storeInfoVieModel.loadStoreInfo()
+        }
+        binding.ProductRefresh.setColorSchemeColors(requireContext().getColor(R.color.Amarillo_200),requireContext().getColor(R.color.Amarillo_500))
+
 
     }
 

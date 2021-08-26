@@ -22,7 +22,7 @@
         android:scaleType="centerCrop"
         app:shapeAppearanceOverlay="@style/roundeImage"
         app:civ_border_width="2dp"
-        app:civ_border_color="@color/purple_700"
+        app:civ_border_color="@color/Amarillo_700"
         />
     <TextView
         android:id="@+id/profile_name"
