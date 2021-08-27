@@ -10,8 +10,10 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
+import com.bumptech.glide.Glide
 import com.example.myapplication.R
 import com.example.myapplication.UI.Activities.MainActivity
+import com.example.myapplication.UI.viewmodels.HomeViewModels
 import com.example.myapplication.UI.viewmodels.LoginViewModel
 import com.example.myapplication.Utils.isValidEmail
 import com.example.myapplication.databinding.FragmentLoginBinding
@@ -29,7 +31,7 @@ class LoginFragment : Fragment() {
     private val binding get() = _binding!!
 
     private val loginViewmodels: LoginViewModel by viewModel()
-
+    private val homeViewModel:HomeViewModels by viewModel()
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -42,6 +44,11 @@ class LoginFragment : Fragment() {
 
     override fun onStart() {
         super.onStart()
+        homeViewModel.loadStoreInfo()
+        homeViewModel.info.observe(viewLifecycleOwner, Observer { info ->
+
+            Glide.with(binding.root).load(info.image).into(binding.imgeLogo)
+        })
 
         binding.buttonRegistro.setOnClickListener {
             findNavController().navigate(R.id.action_loginFragment_to_registroFragment)
