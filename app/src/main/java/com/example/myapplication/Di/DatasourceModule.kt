@@ -10,9 +10,9 @@ val dataSourceModule = module {
     single {
         StoreInfoMocks()
     }
-    single {
+   /* single {
         CommentMock()
-    }
+    }*/
     single {
         ProductMockus()
     }

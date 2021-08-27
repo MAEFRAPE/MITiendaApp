@@ -34,11 +34,11 @@
         app:layout_constraintTop_toBottomOf="@+id/titulo_home"
         android:layout_marginTop="@dimen/fab_margin"
         android:src="@mipmap/ic_launcher"
-        app:civ_border_width="2dp"
-        app:civ_border_color="#FF000000"/>
+        app:civ_border_width="4dp"
+        app:civ_border_color="@color/Amarillo_700"/>
 
 
-    <TextView
+   <!-- <TextView
         android:id="@+id/media_text"
         android:layout_height="wrap_content"
         android:layout_width="wrap_content"
@@ -54,7 +54,7 @@
         android:layout_height="wrap_content"
         app:layout_constraintLeft_toLeftOf="@id/media_text"
         app:layout_constraintTop_toBottomOf="@id/media_text"
-        android:orientation="horizontal"/>
+        android:orientation="horizontal"/>-->
     <Button
         android:id="@+id/textButton"
         android:text="Ver ubicación"
@@ -62,7 +62,7 @@
         android:layout_height="48dp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/imagesRecycler"
+        app:layout_constraintTop_toBottomOf="@id/home_image"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
 
@@ -71,10 +71,11 @@
         android:id="@+id/info_text"
         android:layout_height="wrap_content"
         android:layout_width="wrap_content"
-        app:layout_constraintLeft_toLeftOf="@id/media_text"
+        app:layout_constraintLeft_toLeftOf="@id/home_image"
         app:layout_constraintTop_toBottomOf="@id/textButton"
         android:layout_marginTop="@dimen/fab_margin"
         android:textSize="@dimen/SubTitle"
+        android:textStyle="bold"
         android:text="Información"
         />
     <TextView
@@ -86,8 +87,8 @@
         android:text="Nombre"
         android:textStyle="bold"
         android:textSize="16sp"
-        android:textColor="@color/purple_500"
-        android:layout_margin="15dp"/>
+        android:textColor="@color/Amarillo_500"
+        />
 
 
     <TextView
@@ -96,8 +97,7 @@
         android:layout_width="wrap_content"
         app:layout_constraintLeft_toLeftOf="@id/nameTextView"
         app:layout_constraintTop_toBottomOf="@id/nameTextView"
-        android:layout_marginTop="@dimen/fab_margin"
-        android:textSize="@dimen/SubTitle"
+         android:textSize="@dimen/SubTitle"
         tools:text="Media"
         />
     <TextView
@@ -106,10 +106,11 @@
         android:layout_height="wrap_content"
         app:layout_constraintLeft_toLeftOf="@id/home_name"
         app:layout_constraintTop_toBottomOf="@id/home_name"
+        android:layout_marginTop="@dimen/fab_margin"
         android:text="Teléfono"
         android:textStyle="bold"
         android:textSize="16sp"
-        android:textColor="@color/purple_500" />
+        android:textColor="@color/Amarillo_500" />
 
 
     <TextView
@@ -118,7 +119,6 @@
         android:layout_width="wrap_content"
         app:layout_constraintLeft_toLeftOf="@id/phoneTextView"
         app:layout_constraintTop_toBottomOf="@id/phoneTextView"
-        android:layout_marginTop="@dimen/fab_margin"
         android:textSize="@dimen/SubTitle"
         tools:text="Media"
         />
@@ -128,10 +128,11 @@
         android:layout_height="wrap_content"
         app:layout_constraintLeft_toLeftOf="@id/home_phone"
         app:layout_constraintTop_toBottomOf="@id/home_phone"
+        android:layout_marginTop="@dimen/fab_margin"
         android:text="Dirección"
         android:textStyle="bold"
         android:textSize="16sp"
-        android:textColor="@color/purple_500"
+        android:textColor="@color/Amarillo_500"
         />
 
 
@@ -141,7 +142,6 @@
         android:layout_width="wrap_content"
         app:layout_constraintLeft_toLeftOf="@id/addressTextView"
         app:layout_constraintTop_toBottomOf="@id/addressTextView"
-        android:layout_marginTop="@dimen/fab_margin"
         android:textSize="@dimen/SubTitle"
         tools:text="Media"
         android:layout_marginBottom="40dp"

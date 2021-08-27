@@ -3,30 +3,17 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/Manuel Franco/AndroidStudioProjects/MyApplication/app/src/main/res/drawable/ic_baseline_comment_24.xml" value="0.18020833333333333" />
-        <entry key="..\:/Users/Manuel Franco/AndroidStudioProjects/MyApplication/app/src/main/res/drawable/ic_baseline_email_24.xml" value="0.18020833333333333" />
-        <entry key="..\:/Users/Manuel Franco/AndroidStudioProjects/MyApplication/app/src/main/res/drawable/ic_baseline_home_24.xml" value="0.18020833333333333" />
-        <entry key="..\:/Users/Manuel Franco/AndroidStudioProjects/MyApplication/app/src/main/res/layout/activity_login.xml" value="0.13387978142076504" />
-        <entry key="..\:/Users/Manuel Franco/AndroidStudioProjects/MyApplication/app/src/main/res/layout/activity_main.xml" value="0.1" />
-        <entry key="..\:/Users/Manuel Franco/AndroidStudioProjects/MyApplication/app/src/main/res/layout/activity_splash_screen.xml" value="0.10860655737704918" />
-        <entry key="..\:/Users/Manuel Franco/AndroidStudioProjects/MyApplication/app/src/main/res/layout/content_main.xml" value="0.1" />
-        <entry key="..\:/Users/Manuel Franco/AndroidStudioProjects/MyApplication/app/src/main/res/layout/fragment_detail_product.xml" value="0.1" />
-        <entry key="..\:/Users/Manuel Franco/AndroidStudioProjects/MyApplication/app/src/main/res/layout/fragment_home.xml" value="0.10553278688524591" />
-        <entry key="..\:/Users/Manuel Franco/AndroidStudioProjects/MyApplication/app/src/main/res/layout/fragment_login.xml" value="0.2" />
-        <entry key="..\:/Users/Manuel Franco/AndroidStudioProjects/MyApplication/app/src/main/res/layout/fragment_registro.xml" value="0.25" />
-        <entry key="..\:/Users/Manuel Franco/AndroidStudioProjects/MyApplication/app/src/main/res/layout/fragment_second.xml" value="0.1" />
-        <entry key="..\:/Users/Manuel Franco/AndroidStudioProjects/MyApplication/app/src/main/res/menu/bottom_navigation_menu.xml" value="0.16944444444444445" />
-        <entry key="..\:/Users/Manuel Franco/AndroidStudioProjects/MyApplication/app/src/main/res/menu/menu_main.xml" value="0.16944444444444445" />
-        <entry key="..\:/Users/juanp/Documents/MisionTIC2022/Ciclo 4 - Desarrollo de aplicaciones moviles/MITiendaApp/app/src/main/res/layout/fragment_detail_product.xml" value="0.36666666666666664" />
-        <entry key="..\:/Users/juanp/Documents/MisionTIC2022/Ciclo 4 - Desarrollo de aplicaciones moviles/MITiendaApp/app/src/main/res/layout/fragment_home.xml" value="0.20520833333333333" />
-        <entry key="..\:/Users/juanp/Documents/MisionTIC2022/Ciclo 4 - Desarrollo de aplicaciones moviles/MITiendaApp/app/src/main/res/layout/fragment_product.xml" value="0.5" />
-        <entry key="..\:/Users/juanp/Documents/MisionTIC2022/Ciclo 4 - Desarrollo de aplicaciones moviles/MITiendaApp/app/src/main/res/layout/fragment_profile.xml" value="0.25" />
-        <entry key="..\:/Users/juanp/Documents/MisionTIC2022/Ciclo 4 - Desarrollo de aplicaciones moviles/MITiendaApp/app/src/main/res/layout/fragment_registro.xml" value="0.36666666666666664" />
-        <entry key="..\:/Users/juanp/Documents/MisionTIC2022/Ciclo 4 - Desarrollo de aplicaciones moviles/MITiendaApp/app/src/main/res/layout/item_product.xml" value="0.75" />
+        <entry key="..\:/Manuel Franco/Curso Mintic/Ciclo IV/Proyecto/MiTiendaApp/app/src/main/res/layout/fragment_comment.xml" value="0.264" />
+        <entry key="..\:/Manuel Franco/Curso Mintic/Ciclo IV/Proyecto/MiTiendaApp/app/src/main/res/layout/fragment_home.xml" value="0.13020833333333334" />
+        <entry key="..\:/Manuel Franco/Curso Mintic/Ciclo IV/Proyecto/MiTiendaApp/app/src/main/res/layout/fragment_login.xml" value="0.14945652173913043" />
+        <entry key="..\:/Manuel Franco/Curso Mintic/Ciclo IV/Proyecto/MiTiendaApp/app/src/main/res/layout/fragment_product.xml" value="0.14492753623188406" />
+        <entry key="..\:/Manuel Franco/Curso Mintic/Ciclo IV/Proyecto/MiTiendaApp/app/src/main/res/layout/fragment_profile.xml" value="0.14945652173913043" />
+        <entry key="..\:/Manuel Franco/Curso Mintic/Ciclo IV/Proyecto/MiTiendaApp/app/src/main/res/layout/fragment_registro.xml" value="0.14945652173913043" />
+        <entry key="..\:/Manuel Franco/Curso Mintic/Ciclo IV/Proyecto/MiTiendaApp/app/src/main/res/layout/item_comment.xml" value="0.13020833333333334" />
+        <entry key="..\:/Manuel Franco/Curso Mintic/Ciclo IV/Proyecto/MiTiendaApp/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.2703125" />
       </map>
     </option>
   </component>
-  <component name="ExternalStorageConfigurationManager" enabled="true" />
   <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="11" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>

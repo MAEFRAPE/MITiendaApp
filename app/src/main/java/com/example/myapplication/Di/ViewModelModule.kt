@@ -8,6 +8,6 @@ val viewmodelModule = module {
     viewModel{HomeViewModels(get())}
     viewModel{CommentViewmodel(get())}
     viewModel{ProductViewModel(get())}
-    viewModel{SplasViewModel(get(),get(),get(),get() )}
+    viewModel{SplasViewModel(get(),get(),get() )}
     viewModel{LoginViewModel(get ())}
 }

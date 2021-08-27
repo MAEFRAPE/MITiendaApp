@@ -46,7 +46,7 @@ class UserRepository(private val dataSourceFirebase: FirebaseAuth,private val da
 
 
             user!!.updateProfile(profileUpdate).await()
-            val userDB = User(user.uid.toString(),nombres,apellidos,email,tel)
+            val userDB = User(user.uid.toString(),nombres,apellidos,email,tel,"https://cdn.icon-icons.com/icons2/1378/PNG/512/avatardefault_92824.png")
             db.document(user.uid).set(userDB)
             return user
         }catch (e: FirebaseAuthUserCollisionException){

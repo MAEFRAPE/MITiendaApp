@@ -11,10 +11,10 @@ import com.example.myapplication.Data.databases.dao.CommentDao
 import com.example.myapplication.Data.databases.dao.ProductDao
 import com.example.myapplication.Data.databases.dao.StoreDao
 
-@Database(entities = [Comment::class,Producto::class,Storeinfo::class ],version = 1)
+@Database(entities = [/*Comment::class,*/Producto::class,Storeinfo::class ],version = 1)
 abstract class AppDatabase: RoomDatabase() {
 
-    abstract fun commentDao(): CommentDao
+    //abstract fun commentDao(): CommentDao
     abstract fun productDao():ProductDao
     abstract fun storeDao(): StoreDao
 
