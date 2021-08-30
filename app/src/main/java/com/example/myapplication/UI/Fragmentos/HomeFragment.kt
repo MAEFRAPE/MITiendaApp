@@ -3,6 +3,7 @@ package com.example.myapplication.UI.Fragmentos
 import android.Manifest
 import android.content.pm.PackageManager
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -14,8 +15,10 @@ import androidx.lifecycle.Observer
 import androidx.preference.PreferenceManager
 import com.bumptech.glide.Glide
 import com.example.myapplication.Data.Models.Storeinfo
+import com.example.myapplication.UI.viewmodels.CarruselViewModel
 import com.example.myapplication.UI.viewmodels.HomeViewModels
 import com.example.myapplication.databinding.FragmentHomeBinding
+import com.limerse.slider.model.CarouselItem
 import org.koin.androidx.viewmodel.ext.android.sharedViewModel
 import org.koin.androidx.viewmodel.ext.android.viewModel
 import org.osmdroid.config.Configuration.*
@@ -23,6 +26,7 @@ import org.osmdroid.tileprovider.tilesource.TileSourceFactory
 import org.osmdroid.views.overlay.Marker
 import org.osmdroid.util.GeoPoint
 import java.security.KeyStore
+import kotlin.math.log
 
 
 /**
@@ -37,6 +41,7 @@ class HomeFragment : Fragment() {
     private val binding get() = _binding!!
 
     private val homeViewModel: HomeViewModels by viewModel()
+    private val carruseviewModels:CarruselViewModel by viewModel()
 
     private var mostrar= true
 
@@ -55,7 +60,7 @@ class HomeFragment : Fragment() {
 
     override fun onStart() {
         super.onStart()
-
+        carruseviewModels.loadImagenes()
         homeViewModel.loadStoreInfo()
         homeViewModel.info.observe(viewLifecycleOwner, Observer { info ->
             store = info
@@ -101,7 +106,41 @@ class HomeFragment : Fragment() {
         }
 
 
+        binding.carousel.registerLifecycle(lifecycle)
+        carruseviewModels.carrusel.observe(viewLifecycleOwner, Observer { carrusel ->
+            Log.d("Click",carrusel.toString())
+            binding.carousel.setData(carrusel)
 
+        })
+
+
+
+        /*binding.carousel.setData( listOf(
+
+            CarouselItem(
+                imageUrl = "https://i.ytimg.com/vi/8kP1uxB6a1o/maxresdefault.jpg"
+
+            ) ,
+            CarouselItem(
+                imageUrl = "https://c8.alamy.com/compes/2c45cyp/minimercado-bicicleta-al-aire-libre-con-girasoles-y-una-maquina-expendedora-santiago-del-teide-tenerife-islas-canarias-espana-2c45cyp.jpg"
+
+            ),
+            CarouselItem(
+                imageUrl = "https://cr00.epimg.net/radio/imagenes/2020/03/31/nacional/1585611285_931799_1585611482_noticia_normal_recorte1.jpg"
+
+            ),
+            CarouselItem(
+                imageUrl = "https://www.vanguardia.com/binrepository/716x477/0c0/0d0/none/12204/MTWJ/distrialgusto_comercializadores__de_productos_de_la_canasta_familiar_VL418932_MG19902093.jpg"
+
+            ),
+            CarouselItem(
+                imageUrl = "https://www.eltiempo.com/files/article_main/uploads/2017/11/18/5a1099d2a5e3d.jpeg"
+
+            ),
+        )
+        )*/
+        binding.carousel.autoPlayDelay = 2000
+        binding.carousel.showCaption=true
 
     }
 

@@ -1,9 +1,6 @@
 package com.example.myapplication.Di
 
-import com.example.myapplication.Data.Repositorios.CommentRepository
-import com.example.myapplication.Data.Repositorios.HomeRepository
-import com.example.myapplication.Data.Repositorios.ProductRepository
-import com.example.myapplication.Data.Repositorios.UserRepository
+import com.example.myapplication.Data.Repositorios.*
 import org.koin.dsl.module
 
 val repoModule = module {
@@ -18,5 +15,8 @@ val repoModule = module {
     }
     single {
         UserRepository(get (),get(),get())
+    }
+    single {
+        CarruselRepositiry(get ())
     }
 }

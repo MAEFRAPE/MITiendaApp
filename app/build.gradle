@@ -104,6 +104,10 @@ dependencies {
     // For Android preferences
     implementation 'androidx.preference:preference-ktx:1.0.0'
 
+    // Carrusel
+
+    implementation 'com.github.akshaaatt:Sliding-Carousel:1.0.1'
+
     implementation 'de.hdodenhof:circleimageview:3.1.0'
     implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
     implementation 'androidx.core:core-ktx:1.6.0'
