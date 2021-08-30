@@ -38,4 +38,6 @@
     <string name="esgistras_crea_tu_perfil">Aun no te resgistras..Crea tu Perfil..</string>
     <string name="Crear_Pass2">Confirme Su Contraseña</string>
     <string name="log_out">Log Out</string>
+    <string name="Reset">Digite su correo </string>
+    <string name="Reseteo">Enviar Correo </string>
 </resources>

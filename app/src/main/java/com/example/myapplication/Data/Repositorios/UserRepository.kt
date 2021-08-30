@@ -14,7 +14,8 @@ import com.google.firebase.storage.FirebaseStorage
 import com.google.firebase.storage.StorageReference
 import kotlinx.coroutines.tasks.await
 import java.io.ByteArrayOutputStream
-import java.lang.Error
+
+import kotlin.Error
 
 
 class UserRepository(private val dataSourceFirebase: FirebaseAuth,private val dataSourceStorage:StorageReference,
@@ -37,6 +38,7 @@ class UserRepository(private val dataSourceFirebase: FirebaseAuth,private val da
 
    suspend fun registro(nombres:String, apellidos:String,email:String, tel:String, pass:String):FirebaseUser?{
         try {
+
             dataSourceFirebase.createUserWithEmailAndPassword(email,pass).await()
             var user= dataSourceFirebase.currentUser
             val profileUpdate = userProfileChangeRequest {
@@ -49,10 +51,24 @@ class UserRepository(private val dataSourceFirebase: FirebaseAuth,private val da
             val userDB = User(user.uid.toString(),nombres,apellidos,email,tel,"https://cdn.icon-icons.com/icons2/1378/PNG/512/avatardefault_92824.png")
             db.document(user.uid).set(userDB)
             return user
-        }catch (e: FirebaseAuthUserCollisionException){
+        }catch (e: FirebaseAuthUserCollisionException ){
             throw Error("Correo en Uso")
         }
 
+    }
+
+    suspend fun ValidarCorreo(email:String):FirebaseUser?{
+
+        try {
+
+                dataSourceFirebase.setLanguageCode("es")
+                dataSourceFirebase.sendPasswordResetEmail(email)
+                return dataSourceFirebase.currentUser
+
+        }catch (e: FirebaseAuthEmailException) {
+            throw Error("El Correo No Se Pudo Enviar")
+
+        }
     }
 
    suspend fun login(email: String,pass: String):FirebaseUser?{

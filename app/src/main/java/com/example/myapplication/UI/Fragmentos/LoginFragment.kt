@@ -20,11 +20,7 @@ import com.example.myapplication.databinding.FragmentLoginBinding
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 
-/**
- * A simple [Fragment] subclass.
- * Use the [LoginFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
+
 class LoginFragment : Fragment() {
     private  var _binding: FragmentLoginBinding? = null
 
@@ -52,6 +48,10 @@ class LoginFragment : Fragment() {
 
         binding.buttonRegistro.setOnClickListener {
             findNavController().navigate(R.id.action_loginFragment_to_registroFragment)
+        }
+
+        binding.buttonReseteo.setOnClickListener {
+            findNavController().navigate(R.id.action_loginFragment_to_resetFragment)
         }
 
         binding.buttonSignIn.setOnClickListener {
