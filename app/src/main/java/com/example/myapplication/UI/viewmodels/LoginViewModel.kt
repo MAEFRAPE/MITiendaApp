@@ -44,6 +44,17 @@ class LoginViewModel(private val repo:UserRepository):ViewModel() {
         }
     }
 
+    fun ValidarCorreo(email: String){
+        viewModelScope.launch {
+            try {
+                _user.postValue(repo.ValidarCorreo(email))
+            }catch (e:Error){
+                _error.postValue(e.message!!)
+            }
+        }
+
+    }
+
     fun logout(){
         viewModelScope.launch {
             _user.postValue(repo.logout())

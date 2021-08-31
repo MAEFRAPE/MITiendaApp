@@ -12,9 +12,17 @@
         <action
             android:id="@+id/action_loginFragment_to_registroFragment"
             app:destination="@id/registroFragment" />
+        <action
+            android:id="@+id/action_loginFragment_to_resetFragment"
+            app:destination="@id/resetFragment" />
     </fragment>
     <fragment
         android:id="@+id/registroFragment"
         android:name="com.example.myapplication.UI.Fragmentos.RegistroFragment"
         tools:layout="@layout/fragment_registro" />
+    <fragment
+        android:id="@+id/resetFragment"
+        android:name="com.example.myapplication.UI.Fragmentos.ResetFragment"
+        android:label="fragment_reset"
+        tools:layout="@layout/fragment_reset" />
 </navigation>

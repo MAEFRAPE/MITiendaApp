@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.core.widget.NestedScrollView  xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fillViewport="true">
@@ -37,7 +37,22 @@
         app:civ_border_width="4dp"
         app:civ_border_color="@color/Amarillo_700"/>
 
-
+    <com.limerse.slider.ImageCarousel
+        android:id="@+id/carousel"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/home_image"
+        app:layout_constraintBottom_toTopOf="@+id/textButton"
+        app:autoPlayDelay="3000"
+        app:infiniteCarousel="true"
+        app:touchToPause="true"
+        android:layout_marginTop="@dimen/fab_margin"
+        app:imageScaleType="centerCrop"
+        app:autoPlay="true"
+        app:carouselBackground="#00000000"
+        />
    <!-- <TextView
         android:id="@+id/media_text"
         android:layout_height="wrap_content"
@@ -62,22 +77,47 @@
         android:layout_height="48dp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/home_image"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
+        app:layout_constraintTop_toBottomOf="@id/carousel"
+        app:layout_constraintBottom_toTopOf="@+id/home_osm_map"
+        android:layout_marginTop="@dimen/fab_margin"
+
 
         />
+    <!--<fragment
+        android:id="@+id/home_map"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
+        android:layout_width="0dp"
+        android:layout_height="400dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textButton"
+        app:layout_constraintBottom_toTopOf="@id/home_osm_map"
+        android:layout_marginVertical="@dimen/fab_margin"
+        android:layout_marginHorizontal="@dimen/fab_margin"/>-->
+
+    <org.osmdroid.views.MapView
+
+        android:id="@+id/home_osm_map"
+        android:layout_width="0dp"
+        android:layout_height="400dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textButton"
+        android:layout_margin="@dimen/fab_margin"
+        />
+
     <TextView
         android:id="@+id/info_text"
         android:layout_height="wrap_content"
         android:layout_width="wrap_content"
         app:layout_constraintLeft_toLeftOf="@id/home_image"
-        app:layout_constraintTop_toBottomOf="@id/textButton"
+        app:layout_constraintTop_toBottomOf="@id/home_osm_map"
         android:layout_marginTop="@dimen/fab_margin"
         android:textSize="@dimen/SubTitle"
         android:textStyle="bold"
         android:text="Información"
         />
+
     <TextView
         android:id="@+id/nameTextView"
         android:layout_width="wrap_content"
@@ -89,15 +129,13 @@
         android:textSize="16sp"
         android:textColor="@color/Amarillo_500"
         />
-
-
     <TextView
         android:id="@+id/home_name"
         android:layout_height="wrap_content"
         android:layout_width="wrap_content"
         app:layout_constraintLeft_toLeftOf="@id/nameTextView"
         app:layout_constraintTop_toBottomOf="@id/nameTextView"
-         android:textSize="@dimen/SubTitle"
+        android:textSize="@dimen/SubTitle"
         tools:text="Media"
         />
     <TextView
@@ -112,7 +150,6 @@
         android:textSize="16sp"
         android:textColor="@color/Amarillo_500" />
 
-
     <TextView
         android:id="@+id/home_phone"
         android:layout_height="wrap_content"
@@ -121,7 +158,7 @@
         app:layout_constraintTop_toBottomOf="@id/phoneTextView"
         android:textSize="@dimen/SubTitle"
         tools:text="Media"
-        />
+    />
     <TextView
         android:id="@+id/addressTextView"
         android:layout_width="wrap_content"
@@ -135,7 +172,6 @@
         android:textColor="@color/Amarillo_500"
         />
 
-
     <TextView
         android:id="@+id/home_address"
         android:layout_height="wrap_content"
@@ -147,6 +183,5 @@
         android:layout_marginBottom="40dp"
         />
 
-
 </androidx.constraintlayout.widget.ConstraintLayout>
-</ScrollView>
+</androidx.core.widget.NestedScrollView>

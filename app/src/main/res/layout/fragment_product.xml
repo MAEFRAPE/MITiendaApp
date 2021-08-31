@@ -34,7 +34,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
-                android:text="Mi tienda"
+                android:text="Mi Tiendita"
                 android:textSize="@dimen/title_size"
                 app:layout_constraintLeft_toRightOf="@id/mitienda_product_image"
                 app:layout_constraintTop_toTopOf="parent"

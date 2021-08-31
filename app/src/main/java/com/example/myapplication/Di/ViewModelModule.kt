@@ -10,4 +10,5 @@ val viewmodelModule = module {
     viewModel{ProductViewModel(get())}
     viewModel{SplasViewModel(get(),get(),get() )}
     viewModel{LoginViewModel(get ())}
+    viewModel{CarruselViewModel(get ())}
 }

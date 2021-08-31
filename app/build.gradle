@@ -86,6 +86,28 @@ dependencies {
     implementation 'com.google.firebase:firebase-auth-ktx:21.0.1'
     implementation 'com.google.firebase:firebase-storage-ktx:20.0.0'
 
+    // For Maps
+    implementation 'com.google.android.gms:play-services-maps:17.0.0'
+
+    // Maps SDK for Android KTX Library
+    implementation 'com.google.maps.android:maps-ktx:3.0.0'
+
+    // Lifecycle Runtime KTX Library
+    implementation 'androidx.lifecycle:lifecycle-runtime-ktx:2.3.1'
+
+    // Swipe for refresh
+    implementation 'androidx.swiperefreshlayout:swiperefreshlayout:1.1.0'
+
+    // For OSM
+    implementation 'org.osmdroid:osmdroid-android:6.1.11'
+
+    // For Android preferences
+    implementation 'androidx.preference:preference-ktx:1.0.0'
+
+    // Carrusel
+
+    implementation 'com.github.akshaaatt:Sliding-Carousel:1.0.1'
+
     implementation 'de.hdodenhof:circleimageview:3.1.0'
     implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
     implementation 'androidx.core:core-ktx:1.6.0'
