@@ -4,68 +4,118 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".UI.Fragmentos.ProfileFragment">
+    tools:context=".UI.Fragmentos.ProfileFragment"
+    android:padding="20dp">
 
-    <!-- TODO: Update blank fragment layout -->
+     <de.hdodenhof.circleimageview.CircleImageView
+         android:id="@+id/profile_image"
+         android:layout_width="@dimen/Image_size"
+         android:layout_height="@dimen/Image_size"
+         app:layout_constraintLeft_toLeftOf="parent"
+         app:layout_constraintRight_toRightOf="parent"
+         android:src="@mipmap/ic_launcher"
+         app:layout_constraintTop_toTopOf="parent"
+         app:layout_constraintVertical_chainStyle="packed"
+         android:scaleType="centerCrop"
+         app:shapeAppearanceOverlay="@style/roundeImage"
+         app:civ_border_width="2dp"
+         app:civ_border_color="@color/Amarillo_700"
+         />
 
-    <de.hdodenhof.circleimageview.CircleImageView
-        android:id="@+id/profile_image"
-        android:layout_width="@dimen/Image_size"
-        android:layout_height="@dimen/Image_size"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        android:src="@mipmap/ic_launcher"
-        app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginTop="@dimen/fab_margin"
-        app:layout_constraintBottom_toTopOf="@+id/profile_name"
-        app:layout_constraintVertical_chainStyle="packed"
-        android:scaleType="centerCrop"
-        app:shapeAppearanceOverlay="@style/roundeImage"
-        app:civ_border_width="2dp"
-        app:civ_border_color="@color/Amarillo_700"
-        />
-    <TextView
-        android:id="@+id/profile_name"
-        android:layout_height="wrap_content"
-        android:layout_width="wrap_content"
-        app:layout_constraintLeft_toLeftOf="@id/profile_image"
-        app:layout_constraintTop_toBottomOf="@id/profile_image"
-        android:layout_marginTop="@dimen/fab_margin"
-        android:textSize="@dimen/SubTitle"
-        android:text="Manuel Franco"
-        app:layout_constraintBottom_toTopOf="@+id/profile_email"
-        />
-    <TextView
-        android:id="@+id/profile_email"
-        android:layout_height="wrap_content"
-        android:layout_width="wrap_content"
-        app:layout_constraintLeft_toLeftOf="@id/profile_image"
-        app:layout_constraintTop_toBottomOf="@id/profile_name"
-        android:layout_marginTop="@dimen/fab_margin"
-        android:textSize="@dimen/SubTitle"
-        android:text="2244555"
-        app:layout_constraintBottom_toTopOf="@+id/profile_tel"
-        />
-    <TextView
-        android:id="@+id/profile_tel"
-        android:layout_height="wrap_content"
-        android:layout_width="wrap_content"
-        app:layout_constraintLeft_toLeftOf="@id/profile_image"
-        app:layout_constraintTop_toBottomOf="@id/profile_email"
-        android:layout_marginTop="@dimen/fab_margin"
-        android:textSize="@dimen/SubTitle"
-        android:text="gdgdgd@hotmail.com"
-        app:layout_constraintBottom_toTopOf="@+id/profile_log_out"
-        />
-    <Button
-        android:id="@+id/profile_log_out"
-        android:layout_height="wrap_content"
-        android:layout_width="wrap_content"
-        app:layout_constraintLeft_toLeftOf="@id/profile_image"
-        app:layout_constraintTop_toBottomOf="@id/profile_tel"
-        android:textSize="@dimen/SubTitle"
-        android:text="@string/log_out"
-        app:layout_constraintBottom_toBottomOf="parent"
-        />
+        <View
+            android:id="@+id/profile_divisor_line"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_marginTop="@dimen/fab_margin"
+            android:layout_marginBottom="@dimen/fab_margin"
+            android:background="@color/Amarillo_700"
+            app:layout_constraintBottom_toTopOf="@id/infopersonal_text"
+            app:layout_constraintTop_toBottomOf="@id/profile_image" />
 
+        <TextView
+            android:id="@+id/infopersonal_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/fab_margin"
+            android:text="Información personal"
+            tools:text="Información personal"
+            android:textSize="30sp"
+            app:layout_constraintBottom_toTopOf="@id/profile_name"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/profile_divisor_line" />
+
+         <TextView
+            android:id="@+id/profile_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/infopersonal_text"
+            android:layout_marginTop="10dp"
+            tools:text="Juan Pablo Torres"
+            android:textSize="25sp" />
+
+        <LinearLayout
+            android:id="@+id/phone_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal"
+            app:layout_constraintTop_toBottomOf="@id/profile_name">
+
+            <ImageView
+                android:id="@+id/phone_logo"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:contentDescription="@string/app_name"
+                android:src="@drawable/ic_baseline_phone_24"
+                android:layout_gravity="center_vertical"
+                android:layout_marginRight="7dp"/>
+
+            <TextView
+                android:id="@+id/profile_tel"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="5dp"
+                tools:text="320 825 5679"
+                android:gravity="center_vertical"
+                android:textAlignment="gravity"
+                android:textSize="20sp"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/mail_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="@dimen/fab_margin"
+            app:layout_constraintTop_toBottomOf="@id/phone_layout">
+
+            <ImageView
+                android:id="@+id/mail_logo"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:contentDescription="@string/app_name"
+                android:src="@drawable/ic_baseline_email_24"
+                android:layout_gravity="center_vertical"
+                android:layout_marginRight="7dp"/>
+
+            <TextView
+                android:id="@+id/profile_email"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="5dp"
+                tools:text="juanpablo@hotmail.com"
+                android:gravity="center_vertical"
+                android:textAlignment="gravity"
+                android:textSize="20sp"/>
+        </LinearLayout>
+        <Button
+            android:id="@+id/profile_log_out"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:contentDescription="@string/app_name"
+            android:text="Log Out"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
